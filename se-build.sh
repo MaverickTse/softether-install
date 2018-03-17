@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 cd $HOME
 if [[ ! -d "SoftEtherVPN" ]]; then
     git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git || exit $?
