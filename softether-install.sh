@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 echo "Script for first-time install of SoftEther VPN on CentOS 7"
 yum -y install wget curl git nano centos-release-scl
 yum -y install devtoolset-7-gcc* devtoolset-7-binutils
