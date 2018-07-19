@@ -27,7 +27,7 @@ cat se-build.sh | scl enable devtoolset-7 -
 if [[ ! -f /etc/systemd/system/softether-vpnserver.service ]]; then
     cp $HOME/SoftEtherVPN/systemd/softether-vpnserver.service $HOME/softether-vpnserver.service
 	cd $HOME
-	sed 's/opt/usr/g' softether-vpnserver.service > /etc/systemd/system/softether-vpnserver.service
+	sed 's|opt|usr/local/libexec/softether|g' softether-vpnserver.service > /etc/systemd/system/softether-vpnserver.service
 fi
 systemctl daemon-reload
 systemctl enable softether-vpnserver.service

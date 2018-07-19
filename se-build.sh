@@ -6,8 +6,9 @@ fi
 cd SoftEtherVPN
 git pull || exit $?
 
-yum -y install readline-devel ncurses-devel openssl-devel
+yum -y install cmake3 readline-devel ncurses-devel openssl-devel
+sed -i.bak 's/cmake/cmake3/g' configure
 ./configure
-export DEBUG="NO"
+cd tmp
 make || exit $?
 make install || exit $?
