@@ -9,7 +9,8 @@ Install SoftEther VPN on a fresh CentOS 7 VPS. Opens the necessary ports and set
 2. ```chmod +x softether-install.sh```
 3. ```sudo ./softher-install.sh```
 4. Reboot
-5. Use SE-VPN Server Manager to config your VPN
+5. Check status using ```systemctl status softether-vpnserver```
+6. Use SE-VPN Server Manager to config your VPN
 
 ## Updating
 
@@ -19,7 +20,7 @@ cd ~/SoftEtherVPN
 git pull
 scl enable devtoolset-7 bash
 ./configure
-export DEBUG="NO"
+cd tmp
 make
 make install
 reboot
@@ -29,4 +30,8 @@ reboot
 The Official installation guide is somewhat outdated and unneccessarily complicated. In particualr, an updated CentOS 7 now have firewalld enabled by default, and would reset the old iptable-based rules. Startup script is actually provided using the systemd facility, voiding the need to generate your own init script. (The provided .service file need some patch however, with a single line of sed)
 
 ## Caution
-This script makes use of the **Development branch repo** and build in **Release Mode**
+* If you use LetsEncrypt in the same server, shut down SE-Server before getting a new license or renewing. Port 443 is in conflict.
+* Client: Use OpenVPN's client. SE-Client for Windows has nasty **DNS-leak issue** that seems never fixed. (Actually a Windows problem)
+* This script makes use of the **Development branch repo** and build in **Release Mode**
+* This script replaces "cmake" with "cmake3" in the configure script
+* A lot of changes happened in 2018, likely break sooner or later
