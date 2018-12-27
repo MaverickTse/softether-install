@@ -4,6 +4,7 @@ if [[ ! -d "SoftEtherVPN" ]]; then
     git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git || exit $?
 fi
 cd SoftEtherVPN
+git submodule update --init --recursive
 git pull || exit $?
 
 yum -y install cmake3 readline-devel ncurses-devel openssl-devel
