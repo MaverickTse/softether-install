@@ -24,12 +24,7 @@ firewall-cmd --reload
 # Build SoftEther
 cat se-build.sh | scl enable devtoolset-7 -
 
-if [[ ! -f /etc/systemd/system/softether-vpnserver.service ]]; then
-    cp $HOME/SoftEtherVPN/systemd/softether-vpnserver.service $HOME/softether-vpnserver.service
-	cd $HOME
-	sed 's|opt|usr/local/libexec/softether|g' softether-vpnserver.service > /etc/systemd/system/softether-vpnserver.service
-fi
 systemctl daemon-reload
-systemctl enable softether-vpnserver.service
+systemctl enable softether-vpnserver
 echo "Reboot and check if vpnserver is running"
 
