@@ -35,3 +35,6 @@ The Official installation guide is somewhat outdated and unneccessarily complica
 * This script makes use of the **Development branch repo** and build in **Release Mode**
 * This script replaces "cmake" with "cmake3" in the configure script
 * A lot of changes happened in 2018, likely break sooner or later
+
+## Hidden Trick
+By default, some functions are disabled if you install SoftEther on Japan or China servers. Notably, the __static routing table__ pushing feature. You can get around it by editing the function ```SiIsEnterpriseFunctionsRestrictedOnOpenSource()``` in ```Cedar/Server.c``` than re-compile.
