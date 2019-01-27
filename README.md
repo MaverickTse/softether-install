@@ -27,7 +27,7 @@ reboot
 ```
 
 ## Motivation
-The Official installation guide is somewhat outdated and unneccessarily complicated. In particualr, an updated CentOS 7 now have firewalld enabled by default, and would reset the old iptable-based rules. Startup script is actually provided using the systemd facility, voiding the need to generate your own init script. (The provided .service file need some patch however, with a single line of sed)
+The Official installation guide is somewhat outdated and unneccessarily complicated. In particualr, an updated CentOS 7 now have firewalld enabled by default, and would reset the old iptable-based rules. Startup script is actually provided using the systemd facility, voiding the need to generate your own init script. 
 
 ## Caution
 * If you use LetsEncrypt in the same server, shut down SE-Server before getting a new license or renewing. Port 443 is in conflict.
