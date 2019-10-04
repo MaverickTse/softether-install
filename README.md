@@ -7,7 +7,7 @@ Install SoftEther VPN on a fresh CentOS 7 VPS. Opens the necessary ports and set
 ## Usage
 1. Push the two Shell Scripts to your server into the same folder
 2. ```chmod +x softether-install.sh```
-3. ```sudo ./softher-install.sh```
+3. ```sudo ./softether-install.sh```
 4. Reboot
 5. Check status using ```systemctl status softether-vpnserver```
 6. Use SE-VPN Server Manager to config your VPN
