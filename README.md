@@ -32,6 +32,7 @@ The Official installation guide is somewhat outdated and unneccessarily complica
 ## Caution
 * If you use LetsEncrypt in the same server, shut down SE-Server before getting a new license or renewing. Port 443 is in conflict.
 * Client: Use OpenVPN's client. SE-Client for Windows has nasty **DNS-leak issue** that seems never fixed. (Actually a Windows problem)
+* If OpenVPN cannot be used, try turning off [Multi-homed name resolution](https://www.ghacks.net/2017/08/14/turn-off-smart-multi-homed-name-resolution-in-windows/)
 * This script makes use of the **Development branch repo** and build in **Release Mode**
 * This script replaces "cmake" with "cmake3" in the configure script
 * A lot of changes happened in 2018, likely break sooner or later
